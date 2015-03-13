@@ -26,9 +26,20 @@ MODULE option_file
   INTEGER :: iun1,iun2             !for detail outputs
 
   PUBLIC :: norbx,tmax,teph0,dt,hevol,d_thres,iun1,iun2,nevol
-  PUBLIC :: read_options,read_lenz,read_lenz_unc
+  PUBLIC :: read_options,read_lenz,read_lenz_unc,set_hevol
  
 CONTAINS
+
+! ************************************************************
+!        READ ORBIT EVOLUTIONS
+! ************************************************************
+  SUBROUTINE set_hevol(iunda)
+    REAL(KIND=dkind) :: tevol
+! ---------------------------------------------------
+    READ(iunda,REC=nevol)tevol
+    hevol=FLOOR(tevol/dt)
+  END SUBROUTINE set_hevol
+  
 ! ************************************************************
 !        READ OPTION FROM FILE
 ! ************************************************************

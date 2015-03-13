@@ -70,3 +70,22 @@ no file included, options are declared in module 'option_file.f90'
 
 OUTPUT :
 on screen
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Chiara Tardioli, March 13, 2015
+!
+!***************************************************
+!*                  UNIT TESTS                     *
+!***************************************************
+!
+1) Simple test Ephemeris interpolation table:
+   For a given index orbit and a given time step for the interpolation,
+   it write the interpolation results and the node table on files.
+
+   inputs : follow instructions on screen
+   output : fort.1 (interpolation results),
+   	    fort.2 (ephemeris table of the objects)
+
+./Utest_table.x
+in mlab/ : open matlab and run plot_eph_table.m

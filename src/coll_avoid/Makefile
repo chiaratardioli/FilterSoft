@@ -1,7 +1,7 @@
 include ../make.flags
 include modules.flags
 
-all: filter_sequence.x lenz_cat.x  ephem_table.x # convert_order_results.x:
+all: filter_sequence.x lenz_cat.x ephem_table.x Utest_table.x # convert_order_results.x:
 
 # Executables
 
@@ -21,6 +21,10 @@ lenz_cat.x: option_file.o lenz_cat.o elem_propag.o $(LIBDEPS)
 ephem_table.x: ephem_table.o  fildiropn.o $(LIBDEPS)
 	$(FC) $(FFLAGS) fildiropn.o  ephem_table.o \
 	$(LIBDEPS) -o  ephem_table.x
+
+Utest_table.x: option_file.o fildiropn.o spline.o read_interpol_ephem.o  Utest_table.o $(LIBDEPS)
+	$(FC) $(FFLAGS) option_file.o fildiropn.o spline.o read_interpol_ephem.o \
+	Utest_table.o $(LIBDEPS) -o Utest_table.x
 
 convert_order_results.x: convert_order_results.o $(LIBDEPS)
 	$(FC) $(FFLAGS) convert_order_results.o $(LIBDEPS) -o convert_order_results.x

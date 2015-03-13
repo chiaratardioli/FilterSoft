@@ -72,7 +72,7 @@ PROGRAM filter_sequence
 ! output NxN matrix : hoots (declare in module filter_output)
 ! ================================================
 ! setting (change dt if different from the option file)
-  CALL set_hevol(iunda,nevol,dt,hevol)
+  CALL set_hevol(iunda)
 
 ! Print ephemeris interpolatin table for the obect at position = (i-1)*nevol,
 ! where i is the index of the object in the former catalogue
@@ -108,7 +108,7 @@ PROGRAM filter_sequence
      dt = 1.d0/(2.d0*pig) / k
      write(*,*)'it',k,'dt = ',dt
 
-     CALL set_hevol(iunda,nevol,dt,hevol)
+     CALL set_hevol(iunda)
      CALL filter_two(iunda,orb1,orb2)
 
 !  write(*,*)'evolution step =',dt
@@ -155,7 +155,7 @@ PROGRAM filter_sequence
 ! output NxN matrix : dtime (declare in module filter_output)
 ! ================================================
 ! settinsg (change dt if different from the option file)
-  CALL set_hevol(iunda,nevol,dt,hevol)
+  CALL set_hevol(iunda)
   
   CALL filter_three(iunda,orb1,orb2)
   
@@ -199,21 +199,3 @@ SUBROUTINE read_orbit_index(orb1,orb2,norb)
      ENDIF
   ENDIF
 END SUBROUTINE read_orbit_index
-
-
-! ************************************************************
-!        READ ORBIT EVOLUTIONS
-! ************************************************************
-SUBROUTINE set_hevol(iunda,nvl,dt,hvl)
-  USE fund_const
-  IMPLICIT NONE
-! -------------------- interface --------------------
-  INTEGER,INTENT(IN) :: iunda,nvl
-  REAL(KIND=dkind),INTENT(IN) :: dt
-  INTEGER,INTENT(OUT) :: hvl
-! ------------------ end interface ------------------
-  REAL(KIND=dkind) :: tevol
-! ---------------------------------------------------
-  READ(iunda,REC=nvl)tevol
-  hvl=FLOOR(tevol/dt)
-END SUBROUTINE set_hevol
