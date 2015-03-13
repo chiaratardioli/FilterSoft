@@ -1,2 +1,2 @@
 # Fortran
-Fortran code to be integraded with Orbitf
+Fortran code to be integraded with OrbiFit
