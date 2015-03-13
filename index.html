@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Conjunction Assessment Analysis by chiaratardioli</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Conjunction Assessment Analysis</h1>
+        <p>Fortran code to be integraded with OrbFit</p>
+
+        <p class="view"><a href="https://github.com/chiaratardioli/Fortran">View the Project on GitHub <small>chiaratardioli/Fortran</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/chiaratardioli/Fortran/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/chiaratardioli/Fortran/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/chiaratardioli/Fortran">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>
+<a id="welcome-to-conjunction-assessment-page" class="anchor" href="#welcome-to-conjunction-assessment-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to Conjunction Assessment Page.</h3>
+
+<p>This is a piece of software to be integrated with the <a href="http://adams.dm.unipi.it/orbfit/OrbFit/doc/help.html">OrbFit software</a>.
+It reads a catalogue of objects and systematically excludes pairs that are not at risk of conjunction. It has been tested with a fictitious population of space debris in Low-Earth orbit and with real data of objects from the NORAD website.</p>
+
+<h3>
+<a id="procedures" class="anchor" href="#procedures" aria-hidden="true"><span class="octicon octicon-link"></span></a>Procedures</h3>
+
+<p>After compiling the source code, go on the test folder and try:</p>
+
+<pre><code>$ ./chain_order.sh 0
+$ ./filter_sequence.x
+</code></pre>
+
+<p>If you want to try the TLE catalogue, try instead:</p>
+
+<pre><code>$ ./cubesats_ephemerides.sh
+$ ./filter_sequence.x
+</code></pre>
+
+<p>You can also have a look at one evolution and its interpolation. Just type:</p>
+
+<pre><code>$ ./Utest_table.x
+</code></pre>
+
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>Many contributors, not in GitHub.</p>
+
+<h3>
+<a id="reporting-bugs" class="anchor" href="#reporting-bugs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reporting bugs</h3>
+
+<p>Please contact me for any bug or problem.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/chiaratardioli">chiaratardioli</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-42742458-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
