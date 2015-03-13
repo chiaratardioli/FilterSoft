@@ -74,8 +74,9 @@ PROGRAM filter_sequence
 ! setting (change dt if different from the option file)
   CALL set_hevol(iunda,nevol,dt,hevol)
 
-  CALL check_eph_table(iunda,0)
-!  stop
+! Print ephemeris interpolatin table for the obect at position = (i-1)*nevol,
+! where i is the index of the object in the former catalogue
+!  CALL check_eph_table(iunda,(1-1)*nevol)
 
   apoperi=.FALSE. !compute the apogee-perigee filter and compare
   CALL filter_one(iunda,orb1,orb2,apoperi)

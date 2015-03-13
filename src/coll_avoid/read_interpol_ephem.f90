@@ -148,7 +148,7 @@ CONTAINS
     ENDIF
 
     IF(el2(6).lt.el1(6)) THEN
-       el2(6) = el1(6) + dpig
+       el2(6) = el2(6) + dpig
     ENDIF
     elout = (1.d0-lambda) * el1 + lambda * el2
     elout(6) = princ(elout(6))
@@ -229,13 +229,13 @@ CONTAINS
     INTEGER :: k
 ! ===================================================
 
-    write(*,*)dt,hevol,nevol
+!    write(*,*)dt,hevol,nevol
 
     READ(iunda,REC=pos+1)tevol(1),equ%coord
     equ%t=teph0+tevol(1)
 
     READ(iunda,REC=pos+2)tevol(2),equ%coord
-    write(*,*)tevol(2)-tevol(1)
+!    write(*,*)tevol(2)-tevol(1)
 
     do k=2,hevol
        tevol(k)=tevol(k-1)+dt
