@@ -1,0 +1,78 @@
+
+convert_order_results.o: \
+	../propag/orbit_elements.mod \
+	../suit/fund_const.mod 
+
+elem_propag.o: \
+	../propag/orbit_elements.mod \
+	../propag/spher_harm.mod \
+	../suit/fund_const.mod \
+	../suit/planet_masses.mod 
+
+ephem_table.o: \
+	../propag/orbit_elements.mod \
+	../suit/fund_const.mod 
+
+fildiropn.o: \
+	../suit/file_oper.mod 
+
+filter1.o: \
+	../propag/orbit_elements.mod \
+	../suit/fund_const.mod \
+	filter_output.o \
+	option_file.o \
+	read_interpol_ephem.o 
+
+filter2.o: \
+	../propag/critical_points.mod \
+	../propag/orbit_elements.mod \
+	../suit/fund_const.mod \
+	filter_output.o \
+	option_file.o \
+	read_interpol_ephem.o 
+
+filter3.o: \
+	../propag/critical_points.mod \
+	../propag/orbit_elements.mod \
+	../suit/fund_const.mod \
+	filter_output.o \
+	option_file.o \
+	read_interpol_ephem.o 
+
+filter_output.o: \
+	../suit/fund_const.mod \
+	option_file.o 
+
+filter_sequence.o: \
+	../suit/fund_const.mod \
+	filter1.o \
+	filter2.o \
+	filter3.o \
+	filter_output.o \
+	option_file.o \
+	read_interpol_ephem.o 
+
+lenz_cat.o: \
+	../propag/orbit_elements.mod \
+	../suit/fund_const.mod \
+	option_file.o 
+
+lenz_samples.o: \
+	../propag/orbit_elements.mod \
+	../suit/fund_const.mod \
+	mcsamples.o \
+	option_file.o 
+
+mcsamples.o: \
+	../propag/orbit_elements.mod \
+	../suit/fund_const.mod \
+	option_file.o 
+
+option_file.o: \
+	../propag/orbit_elements.mod \
+	../suit/fund_const.mod 
+
+read_interpol_ephem.o: \
+	../propag/orbit_elements.mod \
+	../suit/fund_const.mod \
+	option_file.o 

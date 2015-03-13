@@ -1,0 +1,53 @@
+ |     Artificial Satellite Earth Orbit    
+ | ----------------------------------------
+ | 
+ | Initial conditions
+ | ------------------
+ | Moments:
+ |   vx=      0.171531922262E+04 m/s       0.557889057950E+00 UD/UT
+ |   vy=      0.630183232775E+03 m/s       0.204960292774E+00 UD/UT
+ |   vz=      0.247297963894E+04 m/s       0.804309928383E+00 UD/UT
+ |   Lambda=  0.100000000000E+00
+ | Variables:
+ |   x=     -0.718789833746E+07 m      -0.170474086786E+00 UD
+ |   y=      0.411765076056E+08 m       0.976575794697E+00 UD
+ |   z=     -0.552419830955E+07 m      -0.131016413676E+00 UD
+ |   theta=  0.464894355943E+01 rad     2455000.5 JD (2009/ 6/18)
+ | Keplerian elements:
+ |   Semi-major axis=  0.421679807988E+08 m       0.100009038537E+01 UD
+ |   Eccentricity=     0.348100000000E-03
+ |   Inclination=      0.218920000000E+01 rad
+ |   Asc. node=        0.164944648410E+01 rad
+ |   Arg. perigee=     0.103654363435E+01 rad
+ |   Mean anomaly=     0.508578815692E+01 rad
+ |
+ | Integration
+ | -----------
+ | Integrator: SABA  8
+ | Gravitational degree:   4
+ |   Third bodies: .Moon.Sun.  
+ | Solar radiation pressure: yes
+ |   Umbra: no
+ |   Area-to-mass ratio: 19.491 m²/kg
+ | Time step:   0.45837 min
+ | Output time step:   0.00000 years
+ | Duration:    0.00174 years
+ | Starting orbit computation
+ | Computing gravitational coefficients...... Done!
+ | Computing integrator coefficients......... Done!
+ | JPL binary file: FileEphem/JPLEPHde405.bin
+ -0.399954811401052     
+  -94.1546588603962     
+ jd=   2455001.13456330       and theta=   2.36375825225217     
+ | Elapsed CPU time:    0.128516 s
+ | 
+ | Analysis of Keplerian elements
+ | ------------------------------
+ |                                MEAN                    AMPLITUDE
+ | Semi-Major Axis     42192549.7870926335  m            0.6451234E+05  m
+ | Eccentricity               0.1298069E-02              0.1979738E-02
+ | Inclination                2.1892470877  rad          0.0000906145  rad
+ | Asc. Node                  1.6495804471  rad          0.0002348594  rad
+ | Arg. Perigee               1.6579067190  rad          0.8631358909  rad
+ | Mean Anomaly               2.9686319105  rad          6.2813589254  rad
+ | Resonant angle             3.1227701406  rad          0.0045087967  rad

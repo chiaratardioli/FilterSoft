@@ -1,0 +1,82 @@
+!                        
+! INPUT PARAMETERS    
+! ================                     
+!
+! * N (int) = number of degrees of freedom (max=25) 
+! * order (int) = order of the symplectic integrator (1->10)
+! * type (int) = type of the symplectic integrator (1: SABA, 2:SBAB)
+! * h (double) = time step [days/2pi]
+! * hout (double) = output time step [days/2pi]
+! * tmax (double) = integration end time [days/2pi]
+! * degree (int) = degree of the gravitational coefficients (max=360)
+! * srp (int) = consideration or not of the solar radiation pressure
+!     (0: no srp, 1: srp without umbra, 2: srp with cylindrical-shape umbra)
+! * If srp!=0: 
+!   Am (double) = area-to-mass ratio of the satellite [m²/kg]
+! * nbtb (int) = number of third bodies (max=25)
+! * tb (array,int) = consideration (1) or not (0) of the orbit of third bodies:
+!     * tb(1): Mercury, tb(2): Venus, tb(3): Earth, tb(4): Mars, tb(5): Jupiter, 
+!     * tb(6): Saturn, tb(7): Uranus, tb(8): Neptune, tb(9): Pluto, tb(10): Moon,
+!     * tb(11): Sun
+! * work (int) = kind of work [1: orbit, 2: phase space]
+! * If work=1:
+!   Choice of coordinates for the input of initial coordinates:
+!    Init = 1 -> cartesian coordinates [m,s]
+!    Init = 2 -> cartesian coordinates [UD,UT]
+!    Init = 3 -> keplerian coordinates [m,rad]
+!   Choice of time input:
+!    time = 1 -> Julian date
+!    time = 2 -> calendar date
+!   ic (array,double) = initial conditions
+!     * ic(1:3):
+!        Init=1 => ic(1:3)=(dx,dy,dz) [m/s]
+!        Init=2 => ic(1:3)=(dx,dy,dz) [UD/UT]
+!        Init=3 => ic(1:3)=(a,e,i) [m,rad]	
+!     * ic(4)=Lambda
+!     * ic(5:7):
+!        Init=1 => ic(5:7)=(x,y,z) [m]	
+!        Init=2 => ic(5:7)=(x,y,z) [UD]
+!        Init=3 => ic(5:7)=(Omega,omega,M) [rad]
+!     * ic(8): 
+!        time=1 => ic(8)=Julian date [days]
+!        time=2 => ic(8:10)=(YYYY,MM,DD) 
+! * If work=2: 
+!   Check initial conditions in subroutine PhaseSpace in file <integrator.f90>
+! * Functions A, B, gradA and gradB:
+!   see first subroutines in file <integrator.f90>
+&input
+ N=4
+ order=8
+ type=2
+ h=4.d-3	!3.97887357729738d-3       !1d0
+ hout=4.-3      !2293.362637d-4   !11466.81319d-3!68800.87911d-3
+ tmax=0.2d0     !1.6d0     !2293.362637d0    !11466.81319d0!68800.87911d0
+ degree=4
+ srp=1
+ Am=0.01d0
+ nbtb=11
+ tb(1)=0
+ tb(2)=0
+ tb(3)=0	
+ tb(4)=0
+ tb(5)=0	
+ tb(6)=0
+ tb(7)=0
+ tb(8)=0
+ tb(9)=0
+ tb(10)=1
+ tb(11)=1
+ work=1
+ Init=3
+ time=1
+ ic(1)= 7949.51499191412d3
+ ic(2)= 8.820906300000000E-003
+ ic(3)= 0.3113113040908870E-01
+ ic(4)= 1d-1
+ ic(5)= 0.2051525656093700E+00
+ ic(6)= 0.6071816896809605E+01
+ ic(7)= 0.1029123942168295E+01
+ ic(8)= 2455000.5d0
+ ic(9)=0
+ ic(10)=0
+&end
