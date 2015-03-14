@@ -1,0 +1,17 @@
+PROGRAMS:
+
+1) lenz_cat.x : CREATE A CATALOG OF SPACE DEBRIS ORBITS FROM kepint_lenz
+   input  : allslenzall_nor.out.orbit
+   	    an integer m related to the number of Virtual Objects to create
+	    (2*m+1 is the total number of VO for each object) 
+	    [input from screen]
+   output : allorbits.fla
+
+   (lenz_cat.x is automatically launched by ../lenz_ephem.sh)
+
+2) genera_inputs.pl $index : create input option file for order.x
+   for each object in the catalog
+   input  : allorbits.fla; input.in_orig
+   output : input.in.$index
+
+ (genera_input.pl is automatically launched by ../lenz_ephem.sh)

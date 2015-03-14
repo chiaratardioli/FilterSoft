@@ -1,6 +1,6 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !
-! Chiara Tardioli, March 15, 2015
+! Chiara Tardioli, March 13, 2015
 !
 ! ****************************************************
 ! *  To generate binary file all_orbit_evolutions.a  *
@@ -52,10 +52,10 @@ $ cat noaa.txt >> file.cat
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !
-! Chiara Tardioli, March 15, 2015
+! Chiara Tardioli, March 13, 2015
 !
 !***************************************************
-!*             CONJUCTION ANALYSIS                 *
+!*             CONJUNCTION ANALYSIS                 *
 !***************************************************
 !
 filter_sequence.x

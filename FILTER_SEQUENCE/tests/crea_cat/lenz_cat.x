@@ -1,1 +1,0 @@
-../../../src/coll_avoid/lenz_cat.x
