@@ -1,8 +1,8 @@
 #!/bin/bash
 
 usage () {
-        echo " Usage: lenz_ephem.sh <no. of alias for each object - 1> "
-	echo "  Example.: 0 for the entire catalogue "
+        echo " Usage: lenz_ephem.sh < (no. of alias for each object - 1)/2 > "
+	echo " Example.: 0 for the entire catalogue "
 #        echo " comments ..."
         exit 1
 }

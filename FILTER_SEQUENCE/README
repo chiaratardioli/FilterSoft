@@ -1,46 +1,46 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !
-! Chiara Tardioli, March 13, 2015
+! Chiara Tardioli, March 14, 2015
 !
 ! ****************************************************
 ! *  To generate binary file all_orbit_evolutions.a  *
 ! *    for the ephemeris interpolation table         *
 ! ****************************************************
 !
-in orb41/tests/coll_avoid/
-./chain_order.sh <(no.of orbits-1)/2>
+in tests/
+./lenz_ephem.sh <(no.of orbits-1)/2>
 	produce an ephemeris table from fictitious catalogue
-./cubsats_ephemerides
+./TLE_ephem.sh
 	produce an ephemeris table from TLE catalogue
 
 
 CONTAINS
-in orb41/tests/coll_avoid/crea_cat
-1) lenz_cat.x <(no.of clones for each object-1)/2>
-input  : allslenzall_nor.out.orbit (from kepint_lenz)
-output : allorbits.fla
-
-2) genera_inputs.pl <no. of orbits>
-input  : allorbits.fla, input.in_orig
-output : input.in.<indice>
-
-in order
-3) order (program for the evolution)
-input  : input.in
-output : results_kepl.dat > saved in orb41/tests/coll_avoid/datafile
-
-4) insertline.py
-input  : results_kepl.dat
-output : tmp_results
-
-in orb41/tests/coll_avoid/
-5) ephem_table.x
+in tests/
+1) ./ephem_table.x
 input  : results_kepl_<index>.dat
 output : all_orbit_evolutions.a
 
-in cubsat/
-6) genera_inputs.pl <no. of orbits> (same as above)
-7) TLE2KEP.x
+in tests/lenz_cat/
+1) ./lenz_cat.x <(no.of clones for each object-1)/2>
+input  : allslenzall_nor.out.orbit (from kepint_lenz)
+output : allorbits.fla
+
+2) ./genera_inputs.pl <no. of orbits>
+input  : allorbits.fla, input.in_orig
+output : input.in.<indice>
+
+in order/
+1) ./order (program for the evolution)
+input  : input.in
+output : results_kepl.dat > saved in orb41/tests/coll_avoid/datafile
+
+2) ./insertline.py
+input  : results_kepl.dat
+output : tmp_results
+
+in TLE_cat/
+1) ./genera_inputs.pl <no. of orbits> (same as above plus random A/m)
+2) ./TLE2KEP.x
 input  : file.fla (TLE catalogue from NORAD website)
 output : allorbitSD.fla (same catalog in Keplerian orbital elements)
 
@@ -58,7 +58,7 @@ $ cat noaa.txt >> file.cat
 !*             CONJUNCTION ANALYSIS                 *
 !***************************************************
 !
-filter_sequence.x
+./filter_sequence.x
 
 INTUP :
 - results_kepl_1.dat     (to set the no. of evolution steps, nevol)
@@ -83,9 +83,11 @@ on screen
    For a given index orbit and a given time step for the interpolation,
    it write the interpolation results and the node table on files.
 
+   ./Utest_table.x
+
    inputs : follow instructions on screen
    output : fort.1 (interpolation results),
    	    fort.2 (ephemeris table of the objects)
 
-./Utest_table.x
-in mlab/ : open matlab and run plot_eph_table.m
+   Then, in mlab/
+      open matlab and run plot_eph_table.m
