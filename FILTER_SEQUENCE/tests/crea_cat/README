@@ -9,10 +9,8 @@ PROGRAMS:
 
    (lenz_cat.x is automatically launched by ../chain_order.sh)
 
-   OLD VERSION : genera_inputs.x
-
 2) genera_inputs.pl $index : create input option file for order.x
-   (charles') for each object in the catalog
+   for each object in the catalog
    input  : allorbits.fla; input.in_orig
    output : input.in.$index
 
