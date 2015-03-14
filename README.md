@@ -1,2 +1,2 @@
-# Fortran
-Fortran code to be integraded with OrbiFit
+# OrbSoft
+Fortran routines to be integraded with OrbiFit software
