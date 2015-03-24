@@ -2,11 +2,11 @@ clear all;
 close all;
 
 
-f=load('../fort.2');
+f=load('../check_interpolation.fla');
 t1=f(:,1);
 equ1 = f(:,2:7);
 
-f=load('../fort.1');
+f=load('../check_nodes.fla');
 t2=f(:,1);
 equ2 = f(:,2:7);
 

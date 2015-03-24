@@ -226,7 +226,7 @@ CONTAINS
 ! ------------------ end interface ------------------
     TYPE(orbit_elem) :: equ
     REAL(KIND=dkind),DIMENSION(tmax) :: tevol
-    INTEGER :: k
+    INTEGER :: k,iun
 ! ===================================================
 
 !    write(*,*)dt,hevol,nevol
@@ -237,17 +237,21 @@ CONTAINS
     READ(iunda,REC=pos+2)tevol(2),equ%coord
 !    write(*,*)tevol(2)-tevol(1)
 
+    CALL filopn(iun,'check_interpolation.fla','UNKOWN')
     do k=2,hevol
        tevol(k)=tevol(k-1)+dt
        equ%t=teph0+tevol(k) !in MJD
        CALL interpolate_elem(iunda,pos,equ%t,equ%coord(1:6))
-       write(1,*)tevol(k),equ%coord(1:6)
+       write(iun,*)tevol(k),equ%coord(1:6)
     enddo
+    CALL filclo(iun,' ')
 
+    CALL filopn(iun,'check_nodes.fla','UNKNOWN')
     do k=1,nevol
-       READ(iunda,REC=pos+k)tevol(k),equ%coord
-       write(2,*)tevol(k),equ%coord
+       READ(iunda,REC=pos+k)tevol(k),equ%coord(1:6)
+       write(iun,*)tevol(k),equ%coord(1:6)
     enddo
+    CALL filclo(iun,' ')
 
   END subroutine check_eph_table
 
