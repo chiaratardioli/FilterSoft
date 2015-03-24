@@ -1,7 +1,7 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!
-! Chiara Tardioli, March 14, 2015
-!
+#################################################################
+# Conjunction Assessment Analysis using a three filter sequence
+#################################################################
+
 ! ****************************************************
 ! *  To generate binary file all_orbit_evolutions.a  *
 ! *    for the ephemeris interpolation table         *
@@ -12,7 +12,6 @@ in tests/
 	produce an ephemeris table from fictitious catalogue
 ./TLE_ephem.sh
 	produce an ephemeris table from TLE catalogue
-
 
 CONTAINS
 in tests/
@@ -48,12 +47,6 @@ Hint: Use cat and >> (append) to produce the catalogue. Example:
 $ cat goes.txt >> file.cat 
 $ cat noaa.txt >> file.cat 
 
-***************************************************
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!
-! Chiara Tardioli, March 13, 2015
-!
 !***************************************************
 !*             CONJUNCTION ANALYSIS                 *
 !***************************************************
@@ -71,10 +64,6 @@ no file included, options are declared in module 'option_file.f90'
 OUTPUT :
 on screen
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!
-! Chiara Tardioli, March 13, 2015
-!
 !***************************************************
 !*                  UNIT TESTS                     *
 !***************************************************
